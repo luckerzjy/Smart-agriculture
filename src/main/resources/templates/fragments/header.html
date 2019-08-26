@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		 xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+		 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+		 th:fragment="header">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- CSRF -->
+<meta name="_csrf" th:content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+<!-- Tether core CSS -->
+<link href="../../css/tether.min.css" th:href="@{/css/tether.min.css}"
+	rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link href="../../css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Font-Awesome CSS -->
+<link href="../../css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
+
+<!-- NProgress CSS -->
+<link href="../../css/nprogress.css" th:href="@{/css/nprogress.css}"
+	rel="stylesheet">
+
+<!-- thinker-md CSS -->
+<link href="../../css/thinker-md.vendor.css"
+	th:href="@{/css/thinker-md.vendor.css}" rel="stylesheet">
+
+<!-- bootstrap tags CSS -->
+<link href="../../css/bootstrap-tagsinput.css"
+	th:href="@{/css/jquery.tagsinput.min.css}" rel="stylesheet">
+
+<!-- bootstrap chosen CSS -->
+<link href="../../css/component-chosen.min.css"
+	th:href="@{/css/component-chosen.min.css}" rel="stylesheet">
+
+<!-- toastr CSS -->
+<link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}"
+	rel="stylesheet">
+
+<!-- jQuery image cropping plugin CSS -->
+<link href="../../css/cropbox.css" th:href="@{/css/cropbox.css}"
+	rel="stylesheet">
+
+<!-- Custome css -->
+<link href="../../css/footer.css" th:href="@{/css/footer.css}"
+	rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+	<div class="container">
+		<a class="navbar-brand" href="/" th:href="@{~/}">智慧农业</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+	      <div class="collapse navbar-collapse" id="navbarResponsive">
+	        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+	          <li class="nav-item">
+	            <a class="nav-link js-scroll-trigger" href="/" >首页</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link js-scroll-trigger" href="/#services">服务</a>
+	          </li>
+	        <!--登录判断-->
+	        <div sec:authorize="isAuthenticated()">
+        		<li class="nav-item" >
+	        			<span sec:authentication="name" class="nav-link js-scroll-trigger"></span>		
+	        	</li> 
+	        	</div>
+	        	 </ul>
+	        	<div sec:authorize="isAuthenticated()">
+	        	        	<form action="/logout" th:action="@{/logout}" method="post">
+	        
+	        			<input class="btn btn-primary" type="submit" value="退出">
+	        		
+	        	</form>
+	        </div>
+	        <div sec:authorize="isAnonymous()">
+	        	<a href="/login" th:href="@{~/login}" class="btn btn-primary">登录</a>
+	        </div>
+	      </div>		
+	</div>
+</nav>
+
+    <script src="../../js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+    <script src="../../js/jquery.form.min.js" th:src="@{/js/jquery.form.min.js}"></script>
+    <script src="../../js/tether.min.js" th:src="@{/js/tether.min.js}"></script>
+    <script src="../../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../../js/nprogress.js" th:src="@{/js/nprogress.js}"></script>
+    <script src="../../js/thinker-md.vendor.min.js" th:src="@{/js/thinker-md.vendor.min.js}"></script>
+    <script src="../../js/bootstrap-tagsinput.js" th:src="@{/js/jquery.tagsinput.min.js}"></script>
+    <script src="../../js/chosen.jquery.js" th:src="@{/js/chosen.jquery.js}"></script>
+    <script src="../../js/toastr.min.js" th:src="@{/js/toastr.min.js}"></script>
+    <script src="../../js/cropbox.js" th:src="@{/js/cropbox.js}"></script>
+    <script src="../../js/thymeleaf-bootstrap-paginator.js" th:src="@{/js/thymeleaf-bootstrap-paginator.js}"></script>
+    <script src="../../js/catalog-generator.js" th:src="@{/js/catalog-generator.js}"></script>
+
+</body>
+</html>

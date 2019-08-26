@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		 xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head  th:replace="~{fragments/header :: header}">
+<meta charset="utf-8">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 	private Long id;
+	private String devId;
+	private String data;
+	private Date addTime; -->
+
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+		<!-- 	<td>ID</td> -->
+			<td>设备ID</td>
+			<td>数据</td>
+			<td>时间</td>
+		</tr>
+		</thead>
+	<tbody>
+<!-- 	<tr th:if="${dataModel.dataList.size()} eq 0">
+		<td colspan="3">没有数据信息！</td>	
+	</tr> -->
+	<tr>
+			<td >2019-02-03 01:20:11</td>
+		<td>26</td>
+		<td >356566078331147</td>
+		</tr>
+		<tr>
+					<td >2019-02-03 12:00:34</td>
+		<td>27</td>
+		<td >356566078331147</td>
+		</tr>
+		<tr>
+					<td >2019-02-03 13:03:45</td>
+		<td>26.3</td>
+		<td >356566078331147</td>
+	</tr>
+	<tr th:each="data : ${dataModel.dataList}">
+		<td th:text="${data.devId}"></td>
+		<td th:text="${data.data}"></td>
+		<td th:text="${data.addTime}"></td>
+	</tr>
+	</tbody>
+</table>
+</div>
+</body>
+
+</html>

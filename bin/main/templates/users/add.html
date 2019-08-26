@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		 xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head th:replace="~{fragments/header :: header}">
+<meta charset="utf-8">
+</head>
+<body>
+<form action="/users" th:action="@{/users}" method="POST" th:object="${userModel.user}">
+<div class="container">
+	<div class="form-group">
+		<br>
+		<h3 >用户注册</h3>
+		<input type="hidden" name="id" th:value="*{id}">
+		<div class="input-group">
+		  	<span class="input-group-addon" id="basic-addon1">账号</span>
+		  	<input type="text" class="form-control"  name="username" th:value="*{username}" >
+		</div>
+		<br>
+		
+		<div class="input-group">
+		  	<span class="input-group-addon">邮箱</span>
+		  	<input type="text" class="form-control" name="email" th:value="*{email}" >
+		</div>
+		<br>
+		
+		<div class="input-group">
+		  	<span class="input-group-addon" id="basic-addon1">姓名</span>
+		  	<input type="text" class="form-control"  name="name" th:value="*{name}" >
+		</div>
+		<br>
+		
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">密码</span>
+		 	<input type="password" class="form-control"  name="password" th:value="*{password}" >
+		</div>
+		<br>
+		
+
+	  <label for="authorities" class="col-form-label">角色</label>
+	  <select id="authorities" name="authorityId" class="form-control form-control-chosen" >
+	    	<option value="1">管理员</option>
+	    	<option value="2">用户</option>
+	  </select>
+
+		
+		<input type="submit" class="btn btn-primary" value="提交">
+		
+	</div>
+</div>
+</form>
+
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>

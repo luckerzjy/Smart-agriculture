@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html html xmlns:th="http://www.thymeleaf.org"
+		 xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+		 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+		 >
+
+    <meta charset="UTF-8">
+    <head>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Style CSS -->
+    <link href="../../css/greenhousestyle.css" th:href="@{/css/greenhousestyle.css}"
+	  rel="stylesheet">
+	  
+	      <link href="../../css/more.css" th:href="@{/css/more.css}"
+	  rel="stylesheet">
+ <!--    <link rel="stylesheet" href="style.css"> -->
+
+</head>
+
+<body>
+
+    <!-- Grids -->
+    <div class="grids d-flex justify-content-between">
+        <div class="grid1"></div>
+        <div class="grid2"></div>
+        <div class="grid3"></div>
+        <div class="grid4"></div>
+        <div class="grid5"></div>
+        <div class="grid6"></div>
+        <div class="grid7"></div>
+        <div class="grid8"></div>
+        <div class="grid9"></div>
+    </div>
+
+
+  <nav class="more navbar navbar-inverse bg-inverse navbar-toggleable-md">
+	<div class="container">
+		<a class="navbar-brand" href="/" th:href="@{~/}">智慧农业</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+	      <div class="collapse navbar-collapse" id="navbarResponsive">
+	        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+	          <li class="nav-item">
+	            <a class="nav-link js-scroll-trigger" href="/" >首页</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link js-scroll-trigger" href="/#services">服务</a>
+	          </li>
+	        登录判断
+	        <div sec:authorize="isAuthenticated()">
+        		<li class="nav-item" >
+	        			<span sec:authentication="name" class="nav-link js-scroll-trigger"></span>		
+	        	</li> 
+	        	</div>
+	        	 </ul>
+	        	<div sec:authorize="isAuthenticated()">
+	        	        	<form action="/logout" th:action="@{/logout}" method="post">
+	        
+	        			<input class="btn btn-primary" type="submit" value="退出">
+	        		
+	        	</form>
+	        </div>
+	        <div sec:authorize="isAnonymous()">
+	        	<a href="/login" th:href="@{~/login}" class="btn btn-primary">登录</a>
+	        </div>
+	      </div>		
+	</div>
+</nav>
+
+    <!-- ***** Hero Area Start ***** -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+            <!-- Single Hero Slide -->
+
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide1.jpg);"  onclick="javascript:location.href='/dataset' ">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>1号大棚</h2>
+                                <p>种植玫瑰、茉莉、茶花、紫罗兰</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide2.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>2号大棚</h2>
+                                <p>种植白菜、青菜、黄瓜、大蒜、土豆</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide3.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>3号大棚</h2>
+                                <p>种植西蓝花、菠菜、生菜、番茄、西红柿</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide4.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>4号大棚</h2>
+                                <p>种植桔梗、月季、杜鹃花、栀子花</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide1.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>5号大棚</h2>
+                                <p>种植桔梗、月季、杜鹃花、栀子花</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide2.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>6号大棚</h2>
+                                <p>种植桔梗、月季、杜鹃花、栀子花</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide4.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>7号大棚</h2>
+                                <p>种植桔梗、月季、杜鹃花、栀子花</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide3.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <div class="line"></div>
+                                <h2>8号大棚</h2>
+                                <p>种植桔梗、月季、杜鹃花、栀子花</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ***** Hero Area End ***** -->
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+
+   <script src="../../js/jquery-2.2.4.min.js" th:src="@{/js/jquery-2.2.4.min.js}"></script>    
+    <!-- Popper js -->
+   <script src="../../js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+    <!-- Bootstrap js -->
+    <script src="../../js/bootstrap2.min.js" th:src="@{/js/bootstrap2.min.js}"></script>
+    <!-- Plugins js -->
+    <script src="../../js/plugins.js" th:src="@{/js/plugins.js}"></script>
+    <!-- Active js -->
+    <script src="../../js/active.js" th:src="@{/js/active.js}"></script>
+
+</body>
+
+</html>
