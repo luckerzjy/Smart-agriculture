@@ -43,7 +43,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 		  .loginPage("/login").failureUrl("/login-error"); 
 		  //对获取数据表的保护
 		  http.authorizeRequests()
-		  .antMatchers("/dataset/**").hasAnyRole("ADMIN","USER") .and() .formLogin() //基于form表单的验证
+		  .antMatchers("/greenhouse/**").hasAnyRole("ADMIN","USER") .and() .formLogin() //基于form表单的验证
 		  .loginPage("/login").failureUrl("/login-error"); 
 		  
 	    	http.csrf().ignoringAntMatchers("/h2-console/**"); // 禁用 H2 控制台的 CSRF 防护

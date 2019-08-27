@@ -3,75 +3,45 @@
 		 xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
 		 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
 		 >
-
     <meta charset="UTF-8">
-    <head>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
     <!-- Style CSS -->
     <link href="../../css/greenhousestyle.css" th:href="@{/css/greenhousestyle.css}"
 	  rel="stylesheet">
-	  
-	      <link href="../../css/more.css" th:href="@{/css/more.css}"
+  
+	<link href="../../css/more.css" th:href="@{/css/more.css}"
 	  rel="stylesheet">
- <!--    <link rel="stylesheet" href="style.css"> -->
-
 </head>
 
 <body>
-
-    <!-- Grids -->
-    <div class="grids d-flex justify-content-between">
-        <div class="grid1"></div>
-        <div class="grid2"></div>
-        <div class="grid3"></div>
-        <div class="grid4"></div>
-        <div class="grid5"></div>
-        <div class="grid6"></div>
-        <div class="grid7"></div>
-        <div class="grid8"></div>
-        <div class="grid9"></div>
-    </div>
-
-
   <nav class="more navbar navbar-inverse bg-inverse navbar-toggleable-md">
 	<div class="container">
 		<a class="navbar-brand" href="/" th:href="@{~/}">智慧农业</a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+		    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
 					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		
-	      <div class="collapse navbar-collapse" id="navbarResponsive">
-	        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-	          <li class="nav-item">
-	            <a class="nav-link js-scroll-trigger" href="/" >首页</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link js-scroll-trigger" href="/#services">服务</a>
-	          </li>
-	        登录判断
-	        <div sec:authorize="isAuthenticated()">
-        		<li class="nav-item" >
+			    <span class="navbar-toggler-icon"></span>
+		    </button>	
+	    <div class="collapse navbar-collapse" id="navbarResponsive">
+	        <ul class="navbar-nav ml-auto my-2 my-lg-0">	        
+	            登录判断
+	            <div sec:authorize="isAuthenticated()">
+        		    <li class="nav-item" >
 	        			<span sec:authentication="name" class="nav-link js-scroll-trigger"></span>		
-	        	</li> 
+	        	    </li> 
 	        	</div>
-	        	 </ul>
-	        	<div sec:authorize="isAuthenticated()">
-	        	        	<form action="/logout" th:action="@{/logout}" method="post">
-	        
-	        			<input class="btn btn-primary" type="submit" value="退出">
-	        		
+	        </ul>
+	     <div sec:authorize="isAuthenticated()">
+	        	 <form action="/logout" th:action="@{/logout}" method="post">
+	                <input class="btn btn-primary" type="submit" value="退出">		
 	        	</form>
-	        </div>
-	        <div sec:authorize="isAnonymous()">
+	     </div>
+	     <div sec:authorize="isAnonymous()">
 	        	<a href="/login" th:href="@{~/login}" class="btn btn-primary">登录</a>
-	        </div>
-	      </div>		
+	     </div>
+	  </div>		
 	</div>
 </nav>
 
@@ -181,7 +151,6 @@
             <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(../../imgs/slide3.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-end">
-                        <div class="col-12">
                             <div class="hero-slides-content">
                                 <div class="line"></div>
                                 <h2>8号大棚</h2>
@@ -192,6 +161,7 @@
                 </div>
             </div>
     </section>
+    
     <!-- ***** Hero Area End ***** -->
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
 
@@ -205,6 +175,10 @@
     <!-- Active js -->
     <script src="../../js/active.js" th:src="@{/js/active.js}"></script>
 
+    <footer class="bg-light py-5" style="background-color: grey;height: 100%">
+        <div class="container">
+             <div class="text-center text-muted">Copyright &copy; 2019智慧农业</div>
+        </div>
+   </footer>
 </body>
-
 </html>

@@ -23,10 +23,6 @@ public class MainController {
 	public String root() {
 		return "redirect:/index2";
 	}
-
-	/*
-	 * @GetMapping("/demo") public String demo() { return "demo"; }
-	 */
 	
 	
 	@GetMapping("/index2")
